@@ -1,0 +1,67 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3172E0"/>
+      <stop offset="1" stop-color="#1F55C0"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="92" fill="url(#bg)"/>
+  <g stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M76 71 L63 84 L76 97"/>
+    <path d="M76 109 L63 122 L76 135"/>
+    <path d="M76 147 L63 160 L76 173"/>
+    <path d="M76 185 L63 198 L76 211"/>
+    <path d="M76 331 L63 344 L76 357"/>
+    <path d="M76 369 L63 382 L76 395"/>
+    <path d="M76 405 L63 418 L76 431"/>
+    <path d="M76 441 L63 454 L76 467"/>
+  </g>
+  <circle cx="92"  cy="84" r="9" fill="#E8632C"/>
+  <circle cx="118" cy="84" r="9" fill="#E8632C"/>
+  <circle cx="144" cy="84" r="9" fill="#E8632C"/>
+  <circle cx="174" cy="84" r="9" fill="#FFFFFF"/>
+  <circle cx="200" cy="84" r="9" fill="#FFFFFF"/>
+  <circle cx="92" cy="122" r="9" fill="#E8632C"/>
+  <rect x="106" y="113" width="76" height="18" rx="9" fill="#E8632C"/>
+  <circle cx="196" cy="122" r="9" fill="#E8632C"/>
+  <circle cx="92"  cy="160" r="9" fill="#E8632C"/>
+  <circle cx="118" cy="160" r="9" fill="#E8632C"/>
+  <circle cx="144" cy="160" r="9" fill="#E8632C"/>
+  <circle cx="170" cy="160" r="9" fill="#E8632C"/>
+  <rect x="184" y="151" width="110" height="18" rx="9" fill="#FFFFFF"/>
+  <circle cx="308" cy="160" r="9" fill="#FFFFFF"/>
+  <circle cx="92"  cy="198" r="9" fill="#7DB2EC"/>
+  <circle cx="118" cy="198" r="9" fill="#7DB2EC"/>
+  <circle cx="144" cy="198" r="9" fill="#8A7A6B"/>
+  <circle cx="170" cy="198" r="9" fill="#7DB2EC"/>
+  <circle cx="200" cy="198" r="9" fill="#FFFFFF"/>
+  <circle cx="226" cy="198" r="9" fill="#FFFFFF"/>
+  <circle cx="252" cy="198" r="9" fill="#FFFFFF"/>
+  <text x="48" y="296" textLength="416" lengthAdjust="spacingAndGlyphs"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="92" font-weight="bold" fill="#FFCF9E">&gt; PHPDoc</text>
+  <rect x="92" y="335" width="84" height="18" rx="9" fill="#FFFFFF"/>
+  <circle cx="190" cy="344" r="9" fill="#FFFFFF"/>
+  <circle cx="218" cy="344" r="9" fill="#E03A2F"/>
+  <circle cx="92"  cy="382" r="9" fill="#E8632C"/>
+  <circle cx="118" cy="382" r="9" fill="#E8632C"/>
+  <rect x="132" y="373" width="44" height="18" rx="9" fill="#E8632C"/>
+  <circle cx="190" cy="382" r="9" fill="#E8632C"/>
+  <circle cx="216" cy="382" r="9" fill="#E8632C"/>
+  <circle cx="242" cy="382" r="9" fill="#E8632C"/>
+  <circle cx="268" cy="382" r="9" fill="#E8632C"/>
+  <circle cx="92"  cy="418" r="9" fill="#7DB2EC"/>
+  <circle cx="118" cy="418" r="9" fill="#7DB2EC"/>
+  <circle cx="144" cy="418" r="9" fill="#7DB2EC"/>
+  <circle cx="170" cy="418" r="9" fill="#7DB2EC"/>
+  <rect x="184" y="409" width="60" height="18" rx="9" fill="#E8632C"/>
+  <circle cx="258" cy="418" r="9" fill="#E8632C"/>
+  <circle cx="282" cy="418" r="9" fill="#FFFFFF"/>
+  <circle cx="308" cy="418" r="9" fill="#FFFFFF"/>
+  <circle cx="334" cy="418" r="9" fill="#FFFFFF"/>
+  <path d="M368 405 L381 418 L368 431" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M398 405 L411 418 L398 431" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="92"  cy="454" r="9" fill="#A9C4E8"/>
+  <circle cx="118" cy="454" r="9" fill="#FFFFFF"/>
+  <circle cx="144" cy="454" r="9" fill="#FFFFFF"/>
+</svg>

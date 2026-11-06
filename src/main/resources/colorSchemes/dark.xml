@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<list>
+  <option name="FALLBACK_PHPDOC_STRUCTURE_MEMBER">
+    <value>
+      <option name="FOREGROUND" value="4B6673"/>
+    </value>
+  </option>
+  <option name="PHPDOC_STRUCTURE_MEMBER">
+    <value>
+      <option name="FOREGROUND" value="E3F8FC"/>
+    </value>
+  </option>
+</list>
