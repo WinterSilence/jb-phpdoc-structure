@@ -1,0 +1,14 @@
+<?xml version='1.1' ?>
+<ivy-module version="2.0">
+  <info organisation="bundledModule" module="intellij.platform.util.coroutines" revision="PS-262.10968.76" />
+  <configurations>
+    <conf name="default" visibility="public" />
+  </configurations>
+  <publications>
+    <artifact name="intellij.platform.util.coroutines" ext="jar" conf="default" url="lib" />
+  </publications>
+  <dependencies>
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.collections.immutable" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.coroutines.core" rev="PS-262.10968.76" />
+  </dependencies>
+</ivy-module>

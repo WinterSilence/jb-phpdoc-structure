@@ -1,0 +1,18 @@
+<?xml version='1.1' ?>
+<ivy-module version="2.0">
+  <info organisation="bundledModule" module="intellij.platform.rpc.topics" revision="PS-262.11879.104" />
+  <configurations>
+    <conf name="default" visibility="public" />
+  </configurations>
+  <publications>
+    <artifact name="intellij.platform.rpc.topics" ext="jar" conf="default" url="lib" />
+  </publications>
+  <dependencies>
+    <dependency org="bundledModule" name="fleet.openmap" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.coroutines.core" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.serialization.core" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.core" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.kernel" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.util.coroutines" rev="PS-262.11879.104" />
+  </dependencies>
+</ivy-module>

@@ -1,0 +1,18 @@
+<?xml version='1.1' ?>
+<ivy-module version="2.0">
+  <info organisation="bundledModule" module="intellij.platform.remote.core" revision="PS-262.11879.104" />
+  <configurations>
+    <conf name="default" visibility="public" />
+  </configurations>
+  <publications>
+    <artifact name="intellij.platform.remote.core" ext="jar" conf="default" url="lib" />
+  </publications>
+  <dependencies>
+    <dependency org="bundledModule" name="intellij.libraries.guava" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlin.reflect" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.core" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.credentialStore" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.projectModel" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.util.ex" rev="PS-262.11879.104" />
+  </dependencies>
+</ivy-module>

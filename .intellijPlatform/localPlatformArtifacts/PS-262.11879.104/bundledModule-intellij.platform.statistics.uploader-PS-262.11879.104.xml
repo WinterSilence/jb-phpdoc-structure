@@ -1,0 +1,19 @@
+<?xml version='1.1' ?>
+<ivy-module version="2.0">
+  <info organisation="bundledModule" module="intellij.platform.statistics.uploader" revision="PS-262.11879.104" />
+  <configurations>
+    <conf name="default" visibility="public" />
+  </configurations>
+  <publications>
+    <artifact name="intellij.platform.statistics.uploader" ext="jar" conf="default" url="lib" />
+  </publications>
+  <dependencies>
+    <dependency org="bundledModule" name="intellij.libraries.jackson" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.jackson.databind" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.jackson.module.kotlin" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.jackson3" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.jackson3.databind" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.jackson3.module.kotlin" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.statistics.config" rev="PS-262.11879.104" />
+  </dependencies>
+</ivy-module>

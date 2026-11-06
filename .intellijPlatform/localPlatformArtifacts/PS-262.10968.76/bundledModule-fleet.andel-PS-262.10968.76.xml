@@ -1,0 +1,20 @@
+<?xml version='1.1' ?>
+<ivy-module version="2.0">
+  <info organisation="bundledModule" module="fleet.andel" revision="PS-262.10968.76" />
+  <configurations>
+    <conf name="default" visibility="public" />
+  </configurations>
+  <publications>
+    <artifact name="fleet.andel" ext="jar" conf="default" url="lib" />
+  </publications>
+  <dependencies>
+    <dependency org="bundledModule" name="fleet.bifurcan" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="fleet.fastutil" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="fleet.util.codepoints" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="fleet.util.core" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="fleet.openmap" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.collections.immutable" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.serialization.core" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.serialization.json" rev="PS-262.10968.76" />
+  </dependencies>
+</ivy-module>

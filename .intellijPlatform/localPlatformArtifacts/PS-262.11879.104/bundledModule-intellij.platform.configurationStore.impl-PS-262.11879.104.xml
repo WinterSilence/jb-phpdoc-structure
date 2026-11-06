@@ -1,0 +1,37 @@
+<?xml version='1.1' ?>
+<ivy-module version="2.0">
+  <info organisation="bundledModule" module="intellij.platform.configurationStore.impl" revision="PS-262.11879.104" />
+  <configurations>
+    <conf name="default" visibility="public" />
+  </configurations>
+  <publications>
+    <artifact name="intellij.platform.configurationStore.impl" ext="jar" conf="default" url="lib" />
+  </publications>
+  <dependencies>
+    <dependency org="bundledModule" name="intellij.libraries.aalto.xml" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.fastutil" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.hash4j" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.coroutines.core" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.serialization.core" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.serialization.json" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.opentelemetry" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.opentelemetry.semconv" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.snakeyaml.engine" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.analysis" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.core" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.core.impl" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.core.ui" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.diagnostic.telemetry" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.diff" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.editor.ui" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.ide" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.ide.core" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.ide.impl" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.ide.initialConfigImport" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.projectModel" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.projectModel.impl" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.statistics" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.util.ex" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.platform.util.ui" rev="PS-262.11879.104" />
+  </dependencies>
+</ivy-module>

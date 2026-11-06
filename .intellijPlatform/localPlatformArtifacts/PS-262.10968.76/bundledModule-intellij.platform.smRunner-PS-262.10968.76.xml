@@ -1,0 +1,30 @@
+<?xml version='1.1' ?>
+<ivy-module version="2.0">
+  <info organisation="bundledModule" module="intellij.platform.smRunner" revision="PS-262.10968.76" />
+  <configurations>
+    <conf name="default" visibility="public" />
+  </configurations>
+  <publications>
+    <artifact name="intellij.platform.smRunner" ext="jar" conf="default" url="plugins/platform-testRunner-plugin/lib/modules" />
+  </publications>
+  <dependencies>
+    <dependency org="bundledModule" name="intellij.libraries.fastutil" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.libraries.teamcity.service.messages" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.analysis" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.codeStyle" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.core" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.core.impl" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.core.ui" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.editor.ui" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.execution" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.execution.impl" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.ide.concurrency" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.ide.core" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.ide.impl" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.lang" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.lvcs" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.projectModel" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.testRunner" rev="PS-262.10968.76" />
+    <dependency org="bundledModule" name="intellij.platform.util.ui" rev="PS-262.10968.76" />
+  </dependencies>
+</ivy-module>

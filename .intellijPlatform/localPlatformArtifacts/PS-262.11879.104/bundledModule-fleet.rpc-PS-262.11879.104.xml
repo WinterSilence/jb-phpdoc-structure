@@ -1,0 +1,19 @@
+<?xml version='1.1' ?>
+<ivy-module version="2.0">
+  <info organisation="bundledModule" module="fleet.rpc" revision="PS-262.11879.104" />
+  <configurations>
+    <conf name="default" visibility="public" />
+  </configurations>
+  <publications>
+    <artifact name="fleet.rpc" ext="jar" conf="default" url="lib" />
+  </publications>
+  <dependencies>
+    <dependency org="bundledModule" name="fleet.multiplatform.shims" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="fleet.reporting.api" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="fleet.reporting.shared" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="fleet.util.core" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.coroutines.core" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.serialization.core" rev="PS-262.11879.104" />
+    <dependency org="bundledModule" name="intellij.libraries.kotlinx.serialization.json" rev="PS-262.11879.104" />
+  </dependencies>
+</ivy-module>
