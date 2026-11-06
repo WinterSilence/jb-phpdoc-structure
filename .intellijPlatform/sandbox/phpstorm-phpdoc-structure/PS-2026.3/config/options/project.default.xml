@@ -1,0 +1,62 @@
+<application>
+  <component name="ProjectManager">
+    <defaultProject>
+      <component name="AgentCommitMessageProject"><![CDATA[{}]]></component>
+      <component name="AutoImportSettings">
+        <option name="autoReloadType" value="SELECTIVE" />
+      </component>
+      <component name="ComposerSettings">
+        <execution>
+          <executable />
+        </execution>
+      </component>
+      <component name="GitLabOAuthSettings"><![CDATA[{}]]></component>
+      <component name="InertiaPackage">
+        <option name="directoryPaths">
+          <list />
+        </option>
+      </component>
+      <component name="PropertiesComponent"><![CDATA[{}]]></component>
+      <component name="TaskManager">
+        <task active="true" id="Default" summary="|b|messages.TaskBundle|k|default.task|Default task">
+          <created>1793984921429</created>
+          <option name="number" value="Default" />
+          <option name="presentableId" value="Default" />
+          <updated>1793984921429</updated>
+        </task>
+        <servers />
+      </component>
+      <component name="VueSettings"><![CDATA[{}]]></component>
+      <component name="XSLT-Support.FileAssociations.UIState">
+        <expand />
+        <select />
+      </component>
+      <component name="masterDetails">
+        <states>
+          <state key="Copyright.UI">
+            <settings>
+              <splitter-proportions>
+                <option name="proportions">
+                  <list>
+                    <option value="0.2" />
+                  </list>
+                </option>
+              </splitter-proportions>
+            </settings>
+          </state>
+          <state key="ScopeChooserConfigurable.UI">
+            <settings>
+              <splitter-proportions>
+                <option name="proportions">
+                  <list>
+                    <option value="0.2" />
+                  </list>
+                </option>
+              </splitter-proportions>
+            </settings>
+          </state>
+        </states>
+      </component>
+    </defaultProject>
+  </component>
+</application>
