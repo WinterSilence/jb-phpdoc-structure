@@ -9,12 +9,7 @@ import com.intellij.ide.util.treeView.smartTree.Grouper
 import com.intellij.ide.util.treeView.smartTree.NodeProvider
 import com.intellij.ide.util.treeView.smartTree.ProvidingTreeModel
 import com.intellij.ide.util.treeView.smartTree.Sorter
-import com.intellij.ide.util.treeView.smartTree.TreeElement
 import com.intellij.openapi.vcs.FileStatus
-import java.lang.reflect.InvocationHandler
-import java.lang.reflect.InvocationTargetException
-import java.lang.reflect.Modifier
-import java.lang.reflect.Proxy
 
 class ColoringStructureViewModel(
     private val delegate: StructureViewModel,
@@ -26,16 +21,11 @@ class ColoringStructureViewModel(
     private val elementInfo = delegate as? StructureViewModel.ElementInfoProvider
     private val expandInfo = delegate as? StructureViewModel.ExpandInfoProvider
 
-    override fun getRoot(): StructureViewTreeElement = colorizeStructureNode(delegate.root) as StructureViewTreeElement
+    override fun getRoot(): StructureViewTreeElement = delegate.root
 
-    override fun getNodeProviders(): Collection<NodeProvider<*>> {
-        return providing?.nodeProviders.orEmpty().map { wrapNodeProvider(it) }
-    }
+    override fun getNodeProviders(): Collection<NodeProvider<*>> = providing?.nodeProviders.orEmpty()
 
-    override fun isEnabled(provider: NodeProvider<*>): Boolean {
-        val original = unwrapNodeProvider(provider) ?: provider
-        return providing?.isEnabled(original) ?: false
-    }
+    override fun isEnabled(provider: NodeProvider<*>): Boolean = providing?.isEnabled(provider) ?: false
 
     override fun getGroupers(): Array<Grouper> = delegate.groupers
 
@@ -82,71 +72,4 @@ class ColoringStructureViewModel(
     }
 
     override fun isSmartExpand(): Boolean = expandInfo?.isSmartExpand ?: false
-
-    override fun getMinimumAutoExpandDepth(): Int {
-        return expandInfo?.minimumAutoExpandDepth ?: super.getMinimumAutoExpandDepth()
-    }
-}
-
-private class NodeProviderHandler(
-    val delegate: NodeProvider<*>,
-) : InvocationHandler {
-    override fun invoke(proxy: Any, method: java.lang.reflect.Method, args: Array<out Any>?): Any? {
-        val arguments = args ?: emptyArray()
-        if (method.name == "provideNodes" && arguments.size == 1) {
-            val provided = delegate.provideNodes(arguments[0] as TreeElement)
-            return provided.map { colorizeStructureNode(it) }
-        }
-        if (method.name == "equals" && arguments.size == 1) {
-            val other = arguments[0]
-            val otherDelegate = unwrapNodeProvider(other)
-            return delegate == (otherDelegate ?: other)
-        }
-        if (method.name == "hashCode" && arguments.isEmpty()) {
-            return delegate.hashCode()
-        }
-        if (method.name == "toString" && arguments.isEmpty()) {
-            return delegate.toString()
-        }
-        return try {
-            method.invoke(delegate, *arguments)
-        } catch (exception: InvocationTargetException) {
-            throw exception.cause ?: exception
-        }
-    }
-}
-
-private fun wrapNodeProvider(delegate: NodeProvider<*>): NodeProvider<*> {
-    val interfaces = publicInterfaces(delegate.javaClass).toTypedArray()
-    val proxy = Proxy.newProxyInstance(
-        ColoringStructureViewModel::class.java.classLoader,
-        interfaces,
-        NodeProviderHandler(delegate),
-    )
-    return proxy as NodeProvider<*>
-}
-
-private fun unwrapNodeProvider(provider: Any): NodeProvider<*>? {
-    if (!Proxy.isProxyClass(provider.javaClass)) {
-        return null
-    }
-    val handler = Proxy.getInvocationHandler(provider)
-    return (handler as? NodeProviderHandler)?.delegate
-}
-
-private fun publicInterfaces(type: Class<*>): Set<Class<*>> {
-    val result = linkedSetOf<Class<*>>()
-    val queue = ArrayDeque<Class<*>>()
-    queue.add(type)
-    while (queue.isNotEmpty()) {
-        val current = queue.removeFirst()
-        for (iface in current.interfaces) {
-            if (Modifier.isPublic(iface.modifiers) && result.add(iface)) {
-                queue.add(iface)
-            }
-        }
-        current.superclass?.let(queue::add)
-    }
-    result.add(NodeProvider::class.java)
-    return result
 }

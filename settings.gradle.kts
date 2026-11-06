@@ -1,4 +1,4 @@
-rootProject.name = "phpstorm-phpdoc-structure"
+rootProject.name = "jb-phpdoc-structure"
 
 pluginManagement {
     repositories {
