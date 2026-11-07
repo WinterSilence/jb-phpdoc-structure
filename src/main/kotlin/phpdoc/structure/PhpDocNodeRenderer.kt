@@ -22,7 +22,7 @@ class PhpDocNodeRenderer : NodeRenderer() {
         hasFocus: Boolean,
     ) {
         super.customizeCellRenderer(tree, value, selected, expanded, leaf, row, hasFocus)
-        if (!isPhpDocMemberOnUi(structureValue(value))) {
+        if (!isPhpDocMemberOnUi(value)) {
             return
         }
         val color = memberColor(tree)
@@ -30,18 +30,18 @@ class PhpDocNodeRenderer : NodeRenderer() {
         while (fragments.hasNext()) {
             fragments.next()
             val attributes = fragments.textAttributes
-            fragments.setTextAttributes(SimpleTextAttributes(attributes.style, color))
+            fragments.textAttributes = SimpleTextAttributes(attributes.style, color)
         }
     }
 }
 
-private fun isPhpDocMemberOnUi(value: Any?): Boolean {
+private fun isPhpDocMemberOnUi(node: Any?): Boolean {
     val app = ApplicationManager.getApplication()
     if (app.isReadAccessAllowed) {
-        return isPhpDocMember(value)
+        return isPhpDocMember(structureValue(node))
     }
-    return WriteIntentReadAction.compute<Boolean> {
-        isPhpDocMember(value)
+    return WriteIntentReadAction.compute {
+        isPhpDocMember(structureValue(node))
     }
 }
 

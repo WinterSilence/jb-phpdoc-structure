@@ -9,20 +9,25 @@ import com.jetbrains.php.lang.documentation.phpdoc.psi.tags.PhpDocPropertyTag
 import com.jetbrains.php.lang.documentation.phpdoc.psi.tags.PhpDocTag
 import com.jetbrains.php.lang.psi.elements.PhpNamedElement
 
-private val PHPDOC_MEMBER_TAGS = setOf("@property", "@property-read", "@property-write", "@method", "@phpstan-property", "@phpstan-method", "@psalm-property", "@psalm-method")
-
 fun isPhpDocMember(value: Any?): Boolean {
     val element = value as? PsiElement ?: return false
     if (element is PhpDocMethod || element is PhpDocProperty) {
         return true
     }
+
     val navigation = element.navigationElement
-    if (navigation is PhpDocMethod || navigation is PhpDocProperty || navigation is PhpDocMethodTag || navigation is PhpDocPropertyTag) {
+    if (
+        navigation is PhpDocMethod
+        || navigation is PhpDocProperty
+        || navigation is PhpDocMethodTag
+        || navigation is PhpDocPropertyTag
+    ) {
         return true
     }
+
     val nameIdentifier = (element as? PhpNamedElement)?.nameIdentifier
     return sequenceOf(element, navigation, nameIdentifier).any { candidate ->
         val tag = candidate?.let { PsiTreeUtil.getParentOfType(it, PhpDocTag::class.java, false) }
-        tag != null && tag.name in PHPDOC_MEMBER_TAGS
+        tag != null && tag.name in DEFAULT_PHPDOC_MEMBER_TAGS
     }
 }

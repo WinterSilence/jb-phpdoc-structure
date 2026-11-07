@@ -3,7 +3,7 @@
     <name>PHPDoc Structure Color</name>
     <vendor url="https://github.com/wintersilence">Fedonyuk Anton</vendor>
     <description><![CDATA[Colors properties and methods declared with PhpDoc tags in the Structure view.]]></description>
-    <change-notes><![CDATA[Initial release.]]></change-notes>
+    <change-notes><![CDATA[Fix bug: read access is allowed from inside read-action only.]]></change-notes>
     <depends>com.intellij.modules.platform</depends>
     <depends>com.jetbrains.php</depends>
     <dependencies>
