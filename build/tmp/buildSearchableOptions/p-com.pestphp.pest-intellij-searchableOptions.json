@@ -1,1 +1,0 @@
-{"id":"preferences.keymap","name":"|b|messages.KeyMapBundle|k|keymap.display.name|","entries":[{"hit":"|b|messages.pestBundle|k|ACTIONS_NEW_PEST_TEST_ACTION_DESCRIPTION|","path":"ActionManager"},{"hit":"|b|messages.pestBundle|k|action.Pest.New.Dataset.text|","path":"ActionManager"},{"hit":"|b|messages.pestBundle|k|action.Pest.New.File.text|","path":"ActionManager"}]}

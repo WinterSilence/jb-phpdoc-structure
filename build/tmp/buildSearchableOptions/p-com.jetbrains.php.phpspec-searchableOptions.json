@@ -1,2 +1,0 @@
-{"id":"preferences.keymap","name":"|b|messages.KeyMapBundle|k|keymap.display.name|","entries":[{"hit":"|b|messages.PhpSpecBundle|k|actions.new.phpspec.class.action.description|","path":"ActionManager"},{"hit":"|b|messages.PhpSpecBundle|k|actions.new.phpspec.class.action.name|","path":"ActionManager"}]}
-{"id":"fileTemplates","name":"|b|messages.IdeBundle|k|title.file.templates|","entries":[{"hit":"PHPSpec Test Method"}]}
