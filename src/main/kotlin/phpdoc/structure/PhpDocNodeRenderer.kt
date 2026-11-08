@@ -1,13 +1,17 @@
 package phpdoc.structure
 
+import com.intellij.concurrency.ConcurrentCollectionFactory
 import com.intellij.ide.structureView.StructureViewTreeElement
 import com.intellij.ide.structureView.newStructureView.StructureViewComponent
 import com.intellij.ide.util.treeView.NodeRenderer
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.application.ReadAction
 import com.intellij.openapi.project.Project
+import com.intellij.psi.PsiElement
 import com.intellij.ui.SimpleTextAttributes
+import com.intellij.util.concurrency.AppExecutorUtil
 import java.awt.Color
+import java.util.Collections
 import java.util.concurrent.Callable
 import javax.swing.JTree
 import javax.swing.SwingUtilities
@@ -23,7 +27,7 @@ class PhpDocNodeRenderer : NodeRenderer() {
         hasFocus: Boolean,
     ) {
         super.customizeCellRenderer(tree, value, selected, expanded, leaf, row, hasFocus)
-        if (!isPhpDocMemberOnUi(value)) {
+        if (!isPhpDocMemberOnUi(tree, value)) {
             return
         }
         val color = memberColor(tree)
@@ -36,14 +40,41 @@ class PhpDocNodeRenderer : NodeRenderer() {
     }
 }
 
-private fun isPhpDocMemberOnUi(node: Any?): Boolean {
-    val app = ApplicationManager.getApplication()
-    if (app.isReadAccessAllowed) {
-        return isPhpDocMember(structureValue(node))
+private val pendingPhpDocMembers: MutableSet<PsiElement> = Collections.newSetFromMap(
+    ConcurrentCollectionFactory.createConcurrentWeakIdentityMap(),
+)
+
+private fun isPhpDocMemberOnUi(tree: JTree, node: Any?): Boolean {
+    val value = structureValue(node)
+    if (ApplicationManager.getApplication().isReadAccessAllowed) {
+        return isPhpDocMember(value)
     }
-    return ReadAction.nonBlocking(Callable {
-        isPhpDocMember(structureValue(node))
-    }).executeSynchronously()
+    val cached = cachedPhpDocMember(value)
+    if (cached != null) {
+        return cached
+    }
+    schedulePhpDocMemberResolve(tree, value)
+    return false
+}
+
+private fun schedulePhpDocMemberResolve(tree: JTree, value: Any?) {
+    val element = value as? PsiElement ?: return
+    if (!pendingPhpDocMembers.add(element)) {
+        return
+    }
+    val project = structureProject(tree)
+    try {
+        ReadAction.nonBlocking(Callable { isPhpDocMember(element) })
+            .expireWhen { project?.isDisposed == true }
+            .submit(AppExecutorUtil.getAppExecutorService())
+            .onProcessed {
+                pendingPhpDocMembers.remove(element)
+                SwingUtilities.invokeLater { tree.repaint() }
+            }
+    } catch (error: Throwable) {
+        pendingPhpDocMembers.remove(element)
+        throw error
+    }
 }
 
 private fun structureValue(value: Any?): Any? {
