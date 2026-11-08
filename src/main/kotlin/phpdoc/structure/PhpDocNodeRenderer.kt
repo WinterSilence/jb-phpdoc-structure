@@ -4,10 +4,11 @@ import com.intellij.ide.structureView.StructureViewTreeElement
 import com.intellij.ide.structureView.newStructureView.StructureViewComponent
 import com.intellij.ide.util.treeView.NodeRenderer
 import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.application.WriteIntentReadAction
+import com.intellij.openapi.application.ReadAction
 import com.intellij.openapi.project.Project
 import com.intellij.ui.SimpleTextAttributes
 import java.awt.Color
+import java.util.concurrent.Callable
 import javax.swing.JTree
 import javax.swing.SwingUtilities
 
@@ -40,9 +41,9 @@ private fun isPhpDocMemberOnUi(node: Any?): Boolean {
     if (app.isReadAccessAllowed) {
         return isPhpDocMember(structureValue(node))
     }
-    return WriteIntentReadAction.compute {
+    return ReadAction.nonBlocking(Callable {
         isPhpDocMember(structureValue(node))
-    }
+    }).executeSynchronously()
 }
 
 private fun structureValue(value: Any?): Any? {
