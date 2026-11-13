@@ -2,8 +2,8 @@
     <id>afedonyuk.plugins.phpdoc.structure.color</id>
     <name>PHPDoc Structure Color</name>
     <vendor url="https://github.com/wintersilence">Fedonyuk Anton</vendor>
-    <description><![CDATA[Colors properties and methods declared with PhpDoc tags in the Structure view.]]></description>
-    <change-notes><![CDATA[Minor fixes for stable work.]]></change-notes>
+    <description><![CDATA[Colors properties and methods declared with PHPDoc tags (PSR-19) in the Structure view.]]></description>
+    <change-notes><![CDATA[Fix detected crashes and refactore code]]></change-notes>
     <depends>com.intellij.modules.platform</depends>
     <depends>com.jetbrains.php</depends>
     <dependencies>
@@ -11,7 +11,7 @@
     </dependencies>
     <extensions defaultExtensionNs="com.intellij">
         <lang.psiStructureViewFactory language="PHP" implementationClass="phpdoc.structure.PhpDocStructureViewFactory" order="first"/>
-        <projectConfigurable parentId="reference.webide.settings.project.settings.php" instance="phpdoc.structure.PhpDocColorConfigurable" id="phpdoc.structure.color.settings" displayName="PhpDoc Structure"/>
+        <projectConfigurable parentId="reference.webide.settings.project.settings.php" instance="phpdoc.structure.PhpDocColorConfigurable" id="phpdoc.structure.color.settings" displayName="PHPDoc Structure"/>
         <errorHandler implementation="com.intellij.diagnostic.JetBrainsMarketplaceErrorReportSubmitter"/>
     </extensions>
 </idea-plugin>

@@ -12,15 +12,20 @@ import com.jetbrains.php.PhpIcons
  * [isReverted] включает его по умолчанию, как «Show Properties».
  */
 object PhpDocFilter : Filter {
-    const val NAME = "Show PhpDoc members"
+    const val NAME = "Show PHPDoc members"
 
     override fun isVisible(treeNode: TreeElement): Boolean {
-        return !isPhpDocMember((treeNode as? StructureViewTreeElement)?.value)
+        val element = treeNode as? StructureViewTreeElement
+        val member = PhpDocMembers.isPhpDocMember(element?.value)
+        if (element != null) {
+            PhpDocNodeRenderer.rememberPhpDocTreeElement(element, member)
+        }
+        return !member
     }
 
     override fun isReverted(): Boolean = true
 
-    override fun getPresentation(): ActionPresentation = ActionPresentationData(NAME, null, PhpIcons.FIELD)
+    override fun getPresentation(): ActionPresentation = ActionPresentationData(NAME, null, PhpIcons.TEMPLATE_PARAMETER)
 
     override fun getName(): String = NAME
 }

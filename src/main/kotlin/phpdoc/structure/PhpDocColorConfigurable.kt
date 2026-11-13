@@ -68,25 +68,25 @@ class PhpDocColorConfigurable(project: Project) : SearchableConfigurable {
     private fun selectedColor() = chooser?.selectedColor ?: settings.color
     private fun selectTags() = input?.text?.split(",")?.toSet() ?: settings.tags
 
+    private fun repaintOpenStructureViews() {
+        for (window in Window.getWindows()) {
+            repaintStructureViews(window)
+        }
+    }
+
+    private fun repaintStructureViews(component: Component) {
+        if (component is StructureViewComponent) {
+            component.tree.repaint()
+        }
+        if (component is Container) {
+            for (child in component.components) {
+                repaintStructureViews(child)
+            }
+        }
+    }
+
     companion object {
         const val ID = "phpdoc.structure.color.settings"
-        const val DISPLAY_NAME = "PhpDoc Structure"
-    }
-}
-
-private fun repaintOpenStructureViews() {
-    for (window in Window.getWindows()) {
-        repaintStructureViews(window)
-    }
-}
-
-private fun repaintStructureViews(component: Component) {
-    if (component is StructureViewComponent) {
-        component.tree.repaint()
-    }
-    if (component is Container) {
-        for (child in component.components) {
-            repaintStructureViews(child)
-        }
+        const val DISPLAY_NAME = "PHPDoc Structure"
     }
 }

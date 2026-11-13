@@ -1,8 +1,9 @@
-# PhpDoc Structure Color
+# PHPDoc Structure Color
 
-The PhpStorm plugin colors properties and methods declared with `@property`, `@property-read`, `@property-write`, and `@method` tags (and Psalm/Phpstan prefixed versions) in the "Structure" tab. The text color is `#207D97`.
+The PhpStorm plugin colors properties and methods declared with `@property`, `@property-read`, `@property-write`, and `@method` tags (and Psalm/Phpstan prefixed versions) in the "Structure" tab.
 
-Regular fields and methods remain unchanged. Inherited members from these tags are colored the same. Sorting and Structure groups remain from PHP. In the "View Options", under the "Show" group, there's a "Show PhpDoc members" option: unchecking this option hides these members.
+Regular fields and methods remain unchanged. Inherited members from these tags are colored the same.
+Sorting and Structure groups remain from PHP. In the "View Options", under the "Show" group, there's a "Show PHPDoc members" option: unchecking this option hides these members.
 
 ## Deploy
 
@@ -14,7 +15,7 @@ JDK 25 is required. The build is compiled against the installed PhpStorm 2026.2.
 
 Plugin archive: `build/distributions/jb-phpdoc-structure-X.Y.Z.zip`.
 
-Installation: `Settings` | `Plugins` | `gear` | `Install Plugin from Disk`.
+Installation: `Settings` | `Plugins` | `"gear icon"` | `Install Plugin from Disk`.
 
 ## Checking in IDE
 
