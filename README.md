@@ -15,6 +15,12 @@ JDK 25 is required. The build is compiled against the installed PhpStorm 2026.2.
 
 Plugin archive: `build/distributions/jb-phpdoc-structure-X.Y.Z.zip`.
 
+Verify plugin:
+```bash
+java -jar verifier-all.jar check-plugin jb-phpdoc-structure/build/distributions/jb-phpdoc-structure-X.Y.Z.zip /opt/devel/PhpStorm
+```
+(Replace "/opt/devel/PhpStorm" to your PhpStorm install directory)
+
 Installation: `Settings` | `Plugins` | `"gear icon"` | `Install Plugin from Disk`.
 
 ## Checking in IDE
